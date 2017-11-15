@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<html>
+<body ng-app="scrumboard.demo">
+    {% verbatim %}
+    <div ng-controller="ScrumboardController">
+        <div ng-repeat="list in data">
+            <h3>{{ list.name }}</h3>
+            <ul>
+                <li ng-repeat="card in list.cards">{{ card.title }}</li>
+            </ul>
+            <input type="text" ng-model="new_title" />
+            <button ng-click="list_add(list, new_title)">+</button>
+        </div>
+    </div>
+    {% endverbatim %}
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="{% static "scrumboard/scrumboard.js" %}"></script>
+</body>
+
+</html>

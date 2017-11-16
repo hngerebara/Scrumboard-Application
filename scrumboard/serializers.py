@@ -1,14 +1,18 @@
 from rest_framework import serializers
 
-from .models import List, Card
+from .models import Board, Card
 
 
-class ListSerializer(serializers.ModelSerializer):
+class BoardSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = List
+        model = Board
+        fields = ('id','name')
+
 
 class CardSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Card
+        fields = '__all__'
+

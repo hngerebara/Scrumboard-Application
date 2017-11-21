@@ -9,12 +9,13 @@
     float: left;
     border: 1px solid grey;
     padding: 7px;
-    align-items: space-between;
+    margin: 7px;
     background-color: #9f6c75;
 }
 
 .board h3{
     padding-left: 7px;
+    white: white;
 }
 
 ul {
@@ -48,4 +49,16 @@ ul {
 
 .flex button {
     flex-basis: auto;
+}
+
+.card button,
+.card input,
+.card textarea {
+    color: #404040;
+    margin: 2px 0px;
+}
+
+.card textarea {
+    width: 100%;
+    resize: vertical;
 }

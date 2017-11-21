@@ -76,6 +76,7 @@ from __future__ import unicode_literals
 
 from .serializers import BoardSerializer,  CardSerializer
 from .models import Board, Card
+from rest_framework import permissions
 from rest_framework.viewsets import  ModelViewSet
 
 
@@ -83,6 +84,7 @@ from rest_framework.viewsets import  ModelViewSet
 class BoardViewSet(ModelViewSet):
     queryset = Board.objects.all()
     serializer_class = BoardSerializer
+    permission_classes = (permissions.IsAuthenticated,)
 
 
 
@@ -90,3 +92,4 @@ class BoardViewSet(ModelViewSet):
 class CardViewSet(ModelViewSet):
     queryset = Card.objects.all()
     serializer_class = CardSerializer
+    permission_classes =  (permissions.IsAuthenticated,)

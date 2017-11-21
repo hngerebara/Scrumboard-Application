@@ -1,10 +1,15 @@
 from django.conf.urls import url
 from django.views.generic import TemplateView
+from rest_framework.routers import DefaultRouter
+from .views import BoardViewSet, CardViewSet
+#
+# urlpatterns = [
+#     url(r'^boards$', BoardViewSet.as_view()),
+#     url(r'^cards$', CardViewSet.as_view()),
+# ]
 
-from .api import ListApi, CardApi
+router = DefaultRouter()
+router.register(r'boards', BoardViewSet, base_name='boards')
+router.register(r'cards', CardViewSet, base_name='cards')
 
-urlpatterns = [
-    url(r'^lists$', ListApi.as_view()),
-    url(r'^cards$', ListApi.as_view()),
-    url(r'^home$', TemplateView.as_view(template_name="scrumboard/home.html")),
-]
+urlpatterns = router.urls

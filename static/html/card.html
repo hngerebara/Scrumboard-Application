@@ -1,0 +1,16 @@
+<div class="card" ng-hide="edit" ng-click="edit=true">
+    <h4>{{ card.title }}</h4>
+    <span class="description">{{ card.description }}</span>
+</div>
+<div class="board" ng-show="edit">
+    <div class="flex">
+        <label><strong>Title: &nbsp;</strong></label>
+        <input type="text" ng-model="card.title" ng-change="updateCard()"/>
+    </div>
+        <textarea ng-model="card.description"
+            placeholder="Enter Description.."
+            ng-change="updateCard()">
+        </textarea>
+        <button ng-click="edit=False">Close</button>
+        <button ng-click="deleteCard()">Delete</button>
+</div>
